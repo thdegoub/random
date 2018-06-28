@@ -1,0 +1,18 @@
+index:
+    path: /
+    controller: App\Controller\HomeController::homepage
+
+home:
+    path: /home
+    controller: App\Controller\HomeController::homepage
+
+posts:
+  path: /posts/{slug}
+  controller: App\Controller\PostsController::showPost
+
+admin.addpost:
+  path: /admin/addpost
+  controller: App\Controller\AdminController::addPost
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

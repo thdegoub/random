@@ -1,0 +1,17 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        Posts:
+          class: App\Entity\Posts
+          form:
+            fields:
+                - { property: 'title', type: 'text'}
+                - { property: 'content', type: 'textarea'}
+                - { property: 'author_id', type: 'integer'}
+                - { property: 'imageFile', type: 'file'}
+                - { property: 'slug', type: 'text'}
+                - { property: 'createdAt', type: 'datetime'}
+        Comments:
+          class: App\Entity\Comments
+        User:
+          class: App\Entity\User
