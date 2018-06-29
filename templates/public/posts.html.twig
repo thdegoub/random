@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col s12 m3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ asset('uploads/images/posts/') ~ post.image}}">
+                    <span class="card-title">{{ post.title }}</span>
+                </div>
+                <div class="card-content">
+                    <p>
+                        {{ post.content }}
+                    </p>
+                </div>
+                <div class="card-action">
+                    <a href="/posts/{{ post.slug }}">Voir Plus</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

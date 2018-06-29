@@ -14,6 +14,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PostsController extends AbstractController
 {
+
+    public function showPosts (PostsRepository $repository)
+    {
+        $posts = $repository->findAll();
+
+        return $this->render('public/posts.html.twig', [ 'posts' => $posts ]);
+    }
+
     public function showPost ($slug, PostsRepository $repository){
 
         $post = $repository->findOneBy(['slug'=> $slug]);
